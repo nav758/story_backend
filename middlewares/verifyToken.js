@@ -6,7 +6,7 @@ const verifyToken = (req, res, next) => {
     if (!headerToken) {
       res.status(401).json({ message: "Unauthorization" });
     }
-    const decode = jwt.verify(headerToken, process.env.SECRET_CODE);
+    const decode = jwt.verify(headerToken, process.env.SECRET_CODE|| "Sw!ptory");
    req.userId =decode.userId;
     next();
   } catch (error) {
@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
 const decodeJwtToken = (authHeader) => {
   try{
     if(!authHeader) return; 
-    const decode = jwt.verify(authHeader, process.env.SECRET_CODE);
+    const decode = jwt.verify(authHeader, process.env.SECRET_CODE|| "Sw!ptory");
     const userId =decode.userId || null;
 
     return userId;

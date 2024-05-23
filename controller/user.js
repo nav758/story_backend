@@ -61,7 +61,7 @@ const registerUser = async (req, res) => {
 
 
 
-       const token = jwt.sign({ userId: userDetails._id, name: userDetails.username }, process.env.SECRET_CODE,{expiresIn: "30m"});
+       const token = jwt.sign({ userId: userDetails._id, name: userDetails.username }, process.env.SECRET_CODE || "Sw!ptory",{expiresIn: "30m"});
        res.json({message: "User Logged in",token,username: userDetails.username,userId: userDetails._id });
      } catch (error) {
        console.log(error);
