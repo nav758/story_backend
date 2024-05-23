@@ -11,9 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://story-backend-rho.vercel.app/"],
-    credentials: true,
+    origin: ["https://story-backend-rho.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 
