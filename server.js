@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://story-frontend-lovat.vercel.app/"],
+    origin: ["https://story-frontend-lovat.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
